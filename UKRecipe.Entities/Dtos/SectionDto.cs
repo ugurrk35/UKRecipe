@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UKRecipe.Entities.Concrete;
-using UKRecipe.Shared.Data.Abstract;
+using UKRecipe.Shared.Entities.Abstract;
 
-namespace UKRecipe.Data.Abstract
+namespace UKRecipe.Entities.Dtos
 {
-    public interface IRecipeRepository:IEntityRepository<Recipe>
+    public class SectionDto : DtoGetBase
     {
-        
+        public Section Section { get; set; }
     }
 }

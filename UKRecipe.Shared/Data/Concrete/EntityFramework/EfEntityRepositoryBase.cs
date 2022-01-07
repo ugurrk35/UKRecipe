@@ -62,7 +62,7 @@ namespace UKRecipe.Shared.Data.Concrete.EntityFramework
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)
         {
             IQueryable<TEntity> query = _context.Set<TEntity>();
-            query = query.Where(predicate);
+           /* query = query.Where(predicate);
 
             if (includeProperties.Any())
             {
@@ -71,7 +71,7 @@ namespace UKRecipe.Shared.Data.Concrete.EntityFramework
                     query = query.Include(includeProperty);
                 }
             }
-
+           */
             return await query.SingleOrDefaultAsync();
         }
 

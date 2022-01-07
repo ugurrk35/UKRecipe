@@ -14,7 +14,7 @@ namespace UKRecipe.Entities.Concrete
        
         public string Quantity { get; set; }
         public int UnitId { get; set; }
-        public Unit Units { get; set; }
+        public virtual Unit Units { get; set; }
 
     }
 }

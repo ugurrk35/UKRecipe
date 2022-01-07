@@ -12,6 +12,6 @@ namespace UKRecipe.Entities.Concrete
         public int Id { get; set; }
         
         public int Position { get; set; }
-        public ICollection<Component> Components { get; set; }
+        public virtual ICollection<Component> Components { get; set; }
     }
 }

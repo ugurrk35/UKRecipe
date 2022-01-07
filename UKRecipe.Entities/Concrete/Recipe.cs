@@ -12,11 +12,11 @@ namespace UKRecipe.Entities.Concrete
         public int Id { get; set; }
         public int CookTimesMinutes { get; set; }
         public int NutritionId { get; set; }
-        public Nutrition Nutrition { get; set; }
+        public virtual Nutrition Nutrition { get; set; }
         public string Name { get; set; }
-        public ICollection<Instruction> Instructions { get; set; }
-        public ICollection<Section> Sections { get; set; }
-        public ICollection<Tag> Tags { get; set; }
+        public virtual ICollection<Instruction> Instructions { get; set; }
+        public virtual ICollection<Section> Sections { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
         public int TotalTimesMinutes { get; set; }
      
         public string Description { get; set; }
@@ -24,6 +24,6 @@ namespace UKRecipe.Entities.Concrete
         public string Yields { get; set; }
         public int PrepTimesMinutes { get; set; }
         public int CategoryId { get; set; }   
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

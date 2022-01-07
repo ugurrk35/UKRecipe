@@ -54,27 +54,9 @@ namespace UKRecipe.Services.Concrete
             }
         }
 
-        public async Task<IDataResult<CategoryDto>> DeleteAsync(int categoryId)
+        public Task<IDataResult<CategoryDto>> DeleteAsync(int categoryId)
         {
-            var category = await _unitOfWork.Categories.GetAsync(c => c.Id == categoryId);
-            if (category != null)
-            {
-        
-                var deletedCategory = await _unitOfWork.Categories.UpdateAsync(category);
-                await _unitOfWork.SaveAsync();
-                return new DataResult<CategoryDto>(ResultStatus.Success, Messages.Category.Delete(deletedCategory.Name), new CategoryDto
-                {
-                    Category = deletedCategory,
-                    ResultStatus = ResultStatus.Success,
-                    Message = Messages.Category.Delete(deletedCategory.Name)
-                });
-            }
-            return new DataResult<CategoryDto>(ResultStatus.Error, Messages.Category.NotFound(isPlural: false), new CategoryDto
-            {
-                Category = null,
-                ResultStatus = ResultStatus.Error,
-                Message = Messages.Category.NotFound(isPlural: false)
-            });
+            throw new NotImplementedException();
         }
 
         public async Task<IDataResult<CategoryListDto>> GetAllAsync()
@@ -103,7 +85,7 @@ namespace UKRecipe.Services.Concrete
             {
                 return new DataResult<CategoryDto>(ResultStatus.Success, new CategoryDto
                 {
-                    Category = category,
+                  
                     ResultStatus = ResultStatus.Success
                 });
             }
@@ -115,20 +97,9 @@ namespace UKRecipe.Services.Concrete
             });
         }
 
-   
-        public async Task<IDataResult<CategoryDto>> UpdateAsync(CategoryUpdateDto categoryUpdateDto)
+        public Task<IDataResult<CategoryDto>> UpdateAsync(CategoryUpdateDto categoryUpdateDto)
         {
-            var oldCategory = await _unitOfWork.Categories.GetAsync(c => c.Id == categoryUpdateDto.Id);
-            var category = _mapper.Map<CategoryUpdateDto, Category>(categoryUpdateDto, oldCategory);
-       
-            var updatedCategory = await _unitOfWork.Categories.UpdateAsync(category);
-            await _unitOfWork.SaveAsync();
-            return new DataResult<CategoryDto>(ResultStatus.Success, Messages.Category.Update(updatedCategory.Name), new CategoryDto
-            {
-                Category = updatedCategory,
-                ResultStatus = ResultStatus.Success,
-                Message = Messages.Category.Update(updatedCategory.Name)
-            });
+            throw new NotImplementedException();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace UKRecipe.Services.Extensions
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
             serviceCollection.AddScoped<IRecipeService, RecipeManager>();
-
+            serviceCollection.AddScoped<ISectionService, SectionManager>();
             return serviceCollection;
         }
 

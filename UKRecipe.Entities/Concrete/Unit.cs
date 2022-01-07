@@ -14,6 +14,6 @@ namespace UKRecipe.Entities.Concrete
         public string Abbreviation { get; set; }
         public string DisplaySingular { get; set; }
         public string DisplayPlural { get; set; }
-        public ICollection<Measurement> Measurements { get; set; }
+        public virtual ICollection<Measurement> Measurements { get; set; }
     }
 }

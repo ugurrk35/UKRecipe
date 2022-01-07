@@ -13,6 +13,6 @@ namespace UKRecipe.Entities.Concrete
         public string Name { get; set; }
         public string DisplaySingular { get; set; }
         public string DisplayPlural { get; set; }
-        public ICollection<Component> Components { get; set; }
+        public virtual ICollection<Component> Components { get; set; }
     }
 }

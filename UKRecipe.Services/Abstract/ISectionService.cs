@@ -8,11 +8,8 @@ using UKRecipe.Shared.Utilities.Results.Abstract;
 
 namespace UKRecipe.Services.Abstract
 {
-    public interface IRecipeService
+    public interface ISectionService
     {
-        Task<IDataResult<RecipeDto>> GetAsync(int recipeId);
-       
-        
-
+        Task<IDataResult<SectionDto>> GetAsync(int sectionId);
     }
 }

@@ -16,6 +16,6 @@ namespace UKRecipe.Entities.Concrete
         public int Sugar { get; set; }
         public int Carbohydrates { get; set; }
         public int Fiber { get; set; }
-        public ICollection<Recipe> Recipes { get; set; }
+        public virtual ICollection<Recipe> Recipes { get; set; }
     }
 }

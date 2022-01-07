@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using UKRecipe.Data.Concrete.EntityFramework.Contexts;
 using UKRecipe.Services.Abstract;
 
 namespace UKRecipe.Api.Controllers
@@ -10,6 +12,8 @@ namespace UKRecipe.Api.Controllers
     public class RecipeController : ControllerBase
     {
         private readonly IRecipeService _recipeService;
+
+
         public RecipeController(IRecipeService recipeService)
         {
             _recipeService=recipeService;
@@ -22,5 +26,7 @@ namespace UKRecipe.Api.Controllers
 
             return Ok(result.Data);
         }
+
+   
     }
 }

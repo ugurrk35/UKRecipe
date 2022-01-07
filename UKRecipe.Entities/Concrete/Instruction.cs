@@ -14,6 +14,6 @@ namespace UKRecipe.Entities.Concrete
         public int position { get; set; }
 
         public int RecipeId { get; set; }
-        public Recipe Recipes { get; set; }
+        public virtual Recipe Recipes { get; set; }
     }
 }

@@ -12,8 +12,8 @@ namespace UKRecipe.Entities.Concrete
         public int Id { get; set; }
         public string RawText { get; set; }
         public int Position { get; set; }
-        public ICollection<Measurement> Measurements { get; set; }
+        public virtual ICollection<Measurement> Measurements { get; set; }
         public int IngredientId { get; set; }
-        public Ingredient Ingredient { get; set; }
+        public virtual Ingredient Ingredient { get; set; }
     }
 }
