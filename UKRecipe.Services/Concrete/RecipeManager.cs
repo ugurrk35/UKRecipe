@@ -26,7 +26,13 @@ namespace UKRecipe.Services.Concrete
             _mapper = mapper;
         }
 
-       
+        public async Task<IResult> AddAsync(RecipeAddDto recipeAddDto)
+        {
+            var recipess=_mapper.Map<Recipe>(recipeAddDto);
+            await _unitOfWork.Recipes.AddAsync(recipess);
+            await _unitOfWork.SaveAsync();
+            return new Result(ResultStatus.Success, $"{recipeAddDto.Name} adlı tarif başarıyla eklenmiştir.");
+        }
 
         public async Task<IDataResult<RecipeDto>> GetAsync(int recipeId)
         {

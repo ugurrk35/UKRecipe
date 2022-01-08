@@ -14,6 +14,8 @@ namespace UKRecipe.Services.AutoMapper.Profiles
         public RecipeProfile()
         {
             CreateMap<RecipeAddDto, Recipe>();
+            CreateMap<Recipe, RecipeAddDto>();
+
         }
     }
 }

@@ -30,7 +30,7 @@ namespace UKRecipe.Data.Concrete.EntityFramework.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-8I58UG8\\SQLEXPRESS; database = Recipee; Trusted_Connection= true");
-            optionsBuilder.UseLazyLoadingProxies();
+          optionsBuilder.UseLazyLoadingProxies();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

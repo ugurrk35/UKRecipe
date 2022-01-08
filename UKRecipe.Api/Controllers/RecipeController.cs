@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using UKRecipe.Data.Concrete.EntityFramework.Contexts;
+using UKRecipe.Entities.Dtos;
 using UKRecipe.Services.Abstract;
 
 namespace UKRecipe.Api.Controllers
@@ -26,6 +27,14 @@ namespace UKRecipe.Api.Controllers
 
             return Ok(result.Data);
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> Add(RecipeAddDto recipeAddDto)
+        {
+            var result= await _recipeService.AddAsync(recipeAddDto);
+            return Ok(result);
+        }
+
 
    
     }

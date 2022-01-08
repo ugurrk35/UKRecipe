@@ -11,8 +11,8 @@ namespace UKRecipe.Services.Abstract
     public interface IRecipeService
     {
         Task<IDataResult<RecipeDto>> GetAsync(int recipeId);
-       
-        
+        Task<IResult> AddAsync(RecipeAddDto categoryAddDto);
+
 
     }
 }
